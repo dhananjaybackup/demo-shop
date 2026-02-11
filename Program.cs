@@ -22,7 +22,7 @@ var app = builder.Build();
 app.UseCors("AllowAngular");
 
 // comment this locally
-// app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
 if (app.Environment.IsDevelopment())
 {
