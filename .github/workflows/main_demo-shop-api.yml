@@ -23,16 +23,18 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore
-      run: dotnet restore DemoBackend
+      run: dotnet restore
 
     - name: Build
-      run: dotnet build DemoBackend --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
 
     - name: Publish
-      run: dotnet publish DemoBackend -c Release -o publish
+      run: dotnet publish -c Release -o publish
 
     - name: Deploy
       uses: azure/webapps-deploy@v2
       with:
         app-name: demo-shop-api
         package: publish
+
+
